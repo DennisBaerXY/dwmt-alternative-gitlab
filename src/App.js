@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.sass";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <div className='App'>
+      <h1 className='App-header'>Under Construction</h1>
+      <div className='GiphyContainer'>
+        <iframe
+          src='https://giphy.com/embed/xZsLh7B3KMMyUptD9D'
+          width='100%'
+          height='100%'
+          style={{ position: "absolute" }}
+          frameBorder='0'
+          class='giphy-embed'
+          allowFullScreen
+        ></iframe>
+      </div>
+      <p className='giphyCredit'>
+        <a href='https://giphy.com/gifs/tlceurope-xZsLh7B3KMMyUptD9D'>
+          via GIPHY
         </a>
-      </header>
+      </p>
     </div>
   );
 }

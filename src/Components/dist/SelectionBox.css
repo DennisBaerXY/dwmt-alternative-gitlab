@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Roboto&family=Roboto+Condensed&display=swap");
+.selectionBox {
+  width: 45%;
+  height: 100%;
+}
+
+.selectVegtableRound {
+  width: 200px;
+  height: 200px;
+  border: none;
+  border-radius: 50%;
+  background-color: #cecece;
+  box-shadow: 0 0.2rem 0.3rem #444444;
+  cursor: pointer;
+}
+
+.boxHeader {
+  margin-top: 3rem;
+  color: #000;
+  font-family: Roboto, sans-serif;
+  font-size: 1.6rem;
+}
+
+.boxDescription {
+  margin-top: 1rem;
+  color: #000;
+  font-family: Roboto, sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.learnMore {
+  background-color: #18A0FB;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}

@@ -1,4 +1,5 @@
 import "./App.sass";
+import InfoScreen from "./Components/InfoScreen";
 import NavBar from "./Components/NavBar";
 import SelectionScreen from "./Components/SelectionScreen";
 function App() {
@@ -15,6 +16,7 @@ function App() {
         </div>
       </section>
       <SelectionScreen />
+      <InfoScreen />
     </div>
   );
 }

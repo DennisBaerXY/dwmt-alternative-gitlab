@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Roboto&family=Roboto+Condensed&display=swap");
+.selectionScreen {
+  padding: 170px 80px 120px 80px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.selectionScreenHeader {
+  color: #314640;
+  font-family: Roboto, sans-serif;
+  font-size: 64px;
+  width: 50%;
+  margin-bottom: 60px;
+}
+
+.flexContainerRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}

@@ -1,26 +1,20 @@
-import logo from "./logo.svg";
 import "./App.sass";
+import NavBar from "./Components/NavBar";
+import landingPageMediaImg from "./images/landingPageMedia.jpg";
 
 function App() {
   return (
+    //Main Page
     <div className='App'>
-      <h1 className='App-header'>Under Construction</h1>
-      <div className='GiphyContainer'>
-        <iframe
-          src='https://giphy.com/embed/xZsLh7B3KMMyUptD9D'
-          width='100%'
-          height='100%'
-          style={{ position: "absolute" }}
-          frameBorder='0'
-          class='giphy-embed'
-          allowFullScreen
-        ></iframe>
-      </div>
-      <p className='giphyCredit'>
-        <a href='https://giphy.com/gifs/tlceurope-xZsLh7B3KMMyUptD9D'>
-          via GIPHY
-        </a>
-      </p>
+      <NavBar />
+      <section className='startMedia'>
+        <div className='landingPageHeaderContainer'>
+          <h1 className='saisoDecoFont'>Saiso</h1>
+          <a href='#'>
+            <button className='landingButton'>Join Today</button>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,5 +1,5 @@
-@import "./sass/library/colors"
-@import "./sass/library/fonts"
+@import "./sass/library/_colors"
+@import "./sass/library/_fonts"
 .App
   margin: 0
   padding: 0
@@ -33,7 +33,6 @@
 
   color: $saiso-deco-font-color
 
-.margin-top20
 .landingPageHeaderContainer
   margin-top: 20rem
 
@@ -44,9 +43,10 @@
 
 .landingButton
 
-  cursor: pointer
-  padding: 15px
-  width: 15rem
+  position: relative
+  padding: 0.2rem
+  width: 13rem
+  height: 3.5rem
 
   background-color: $secondary-color
   border: none
@@ -55,3 +55,14 @@
   color: white
 
   font-family: $body-font-family
+
+  transition: all 0.3s ease-in-out
+
+  &:hover
+    cursor: pointer
+
+    background-color: #fff
+    color: $secondary-color
+    border: 1px solid $secondary-color
+    border-radius: 15px
+    transform: scale(1.1)

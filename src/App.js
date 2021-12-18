@@ -1,4 +1,5 @@
 import "./App.sass";
+import Footer from "./Components/Footer";
 import InfoScreen from "./Components/InfoScreen";
 import LandingPageEnd from "./Components/LandingPageEnd";
 import NavBar from "./Components/NavBar";
@@ -19,6 +20,7 @@ function App() {
       <SelectionScreen />
       <InfoScreen />
       <LandingPageEnd />
+      <Footer />
     </div>
   );
 }

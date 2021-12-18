@@ -1,5 +1,4 @@
 import React from "react";
-import Screen from "./Screen";
 import "./InfoScreen.sass";
 import InfoGraphic from "./InfoGraphic";
 

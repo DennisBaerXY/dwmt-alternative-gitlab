@@ -9,7 +9,19 @@ const InfoScreen = () => {
 
   return (
     <div className='infoScreen'>
-      <h1 className='screenHeader'>The largest community of vegtable eaters</h1>
+      <div className='headingAndButtonsContainer'>
+        <h1 className='screenHeader'>
+          Vergleiche den CO2 Verbrauch zu anderen Zeiten
+        </h1>
+
+        <div className='buttonsContainer'>
+          <button className='seasonSwitchButton'>Frühling</button>
+          <button className='seasonSwitchButton'>Sommer</button>
+          <button className='seasonSwitchButton'>Herbst</button>
+          <button className='seasonSwitchButton'>Winter</button>
+        </div>
+      </div>
+
       <div className='infoGraphicContainer'>
         <InfoGraphic name={selection.name} />
       </div>

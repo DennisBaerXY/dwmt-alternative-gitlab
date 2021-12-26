@@ -27,66 +27,230 @@ let fruites = [
   {
     name: "Erbsen",
     months: [7],
-    emission: 130,
-    emissionUnit: "g/100g",
+    inSeason: {
+      emission: 145,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 200,
+      emissionUnit: "g/100g",
+    },
+
     color: "green",
-    image: "erbsen.jpg",
+    image: "#",
   },
   {
-    name: "Karotte",
+    name: "Karotten",
     months: [7],
-    emission: 0,
-    emissionUnit: "g/100g",
-    color: "orange",
-    image: "karotte.jpg",
+    inSeason: {
+      emission: 250,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 300,
+      emissionUnit: "g/100g",
+    },
+
+    color: "green",
+    image: "#",
   },
   {
     name: "Paprika",
     months: [7],
-    emission: 0,
-    emissionUnit: "g/100g",
-    color: "red",
-    image: "paprika.jpg",
+    inSeason: {
+      emission: 130,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 200,
+      emissionUnit: "g/100g",
+    },
+
+    color: "green",
+    image: "#",
   },
   {
     name: "Rosenkohl",
     months: [10],
-    emission: 0,
-    emissionUnit: "g/100g",
-    color: "yellow",
-    image: "rosenkohl.jpg",
+    inSeason: {
+      emission: 130,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 200,
+      emissionUnit: "g/100g",
+    },
+
+    color: "green",
+    image: "#",
   },
   {
     name: "Quitte",
     months: [10],
-    emission: 0,
-    emissionUnit: "g/100g",
-    color: "yellow",
-    image: "quitte.jpg",
+    inSeason: {
+      emission: 130,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 200,
+      emissionUnit: "g/100g",
+    },
+
+    color: "green",
+    image: "#",
   },
   {
     name: "Lauch",
     months: [10],
-    emission: 0,
-    emissionUnit: "g/100g",
-    color: "yellow",
-    image: "lauch.jpg",
+    inSeason: {
+      emission: 130,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 200,
+      emissionUnit: "g/100g",
+    },
+
+    color: "green",
+    image: "#",
   },
   {
     name: "Erdbeere",
     months: [5],
-    emission: 0,
-    emissionUnit: "g/100g",
-    color: "yellow",
-    image: "erdbeere.jpg",
+    inSeason: {
+      emission: 130,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 200,
+      emissionUnit: "g/100g",
+    },
+
+    color: "green",
+    image: "#",
   },
   {
-    name: "Champion",
+    name: "Champignon",
     months: [5],
-    emission: 0,
-    emissionUnit: "g/100g",
+    inSeason: {
+      emission: 130,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 200,
+      emissionUnit: "g/100g",
+    },
+
+    color: "green",
+    image: "#",
+  },
+
+  //more random data, NOT REAL DATA
+
+  {
+    name: "Banane",
+    months: [5, 6, 7, 8, 9, 10, 11, 12],
+    inSeason: {
+      emission: 160,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 500,
+      emissionUnit: "g/100g",
+    },
+
     color: "yellow",
-    image: "champion.jpg",
+    image: "#",
+  },
+  {
+    name: "Apfel",
+    months: [8, 9, 10],
+    inSeason: {
+      emission: 80,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 600,
+      emissionUnit: "g/100g",
+    },
+
+    color: "red",
+    image: "#",
+  },
+  {
+    name: "Orange",
+    months: [8, 9, 10],
+    inSeason: {
+      emission: 80,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 600,
+      emissionUnit: "g/100g",
+    },
+
+    color: "orange",
+    image: "#",
+  },
+  {
+    name: "Zitrone",
+    months: [8, 9, 10],
+    inSeason: {
+      emission: 80,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 600,
+      emissionUnit: "g/100g",
+    },
+
+    color: "green",
+    image: "#",
+  },
+  {
+    name: "Pfirsich",
+    months: [8, 9, 10],
+    inSeason: {
+      emission: 80,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 600,
+      emissionUnit: "g/100g",
+    },
+
+    color: "red",
+    image: "#",
+  },
+  {
+    name: "Kiwi",
+    months: [8, 9, 10],
+    inSeason: {
+      emission: 80,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 600,
+      emissionUnit: "g/100g",
+    },
+
+    color: "green",
+    image: "#",
+  },
+  {
+    name: "Birne",
+    months: [8, 9, 10],
+    inSeason: {
+      emission: 80,
+      emissionUnit: "g/100g",
+    },
+    outOfSeason: {
+      emission: 600,
+      emissionUnit: "g/100g",
+    },
+
+    color: "orange",
+    image: "#",
   },
 ];
 

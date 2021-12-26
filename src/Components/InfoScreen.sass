@@ -8,14 +8,52 @@
     align-items: center
     justify-content: center
 .screenHeader
-    font-size: 3rem
+    font-size: $h1-font-size
     font-weight: regular
     font-family: $h1-font-family
     color: $h1-color
-    width: 50%
-
-    padding: 8rem
 
 .infoGraphicContainer
-    width: 50%
+    width: 100%
     height: 100%
+.headingAndButtonsContainer
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 2rem
+
+.buttonsContainer
+    width: 100%
+    display: flex
+    flex-direction: row
+    justify-content: center
+    gap: 2rem
+
+    padding: 0 5rem
+
+    button
+        color: white
+        width: 10rem
+        height: 4rem
+        padding: 1rem
+        text-align: center
+        border-radius: 5px
+        border: none
+        font-size: $button-font-size
+        font-weight: regular
+        font-family: $button-font-size
+        cursor: pointer
+        transition: all 0.3s ease-in-out
+        background-color: $primary-color
+        &:hover
+            background-color: white
+            color: $secondary-color
+            border: 1px solid $secondary-color
+
+            transform: translateY(-4px)
+        &:focus
+            outline: none
+
+        &:active
+            //background-color: $tertiary-color

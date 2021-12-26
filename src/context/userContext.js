@@ -41,9 +41,22 @@ const UserContext = (props) => {
   //All the Months in the given seasion of the Northern Hemisphere
   const [monthsInSeasion, setmonthsInSeasion] = useState([]);
 
+  function isFruiteInSeason(fruite) {
+    return fruite.months.includes(month);
+  }
+
+  function getEmissionPerKG(fruite) {
+    let inSeason = isFruiteInSeason(fruite);
+    if (inSeason) {
+      return (fruite.inSeason.emission * 10) / 1000;
+    } else {
+      return (fruite.outOfSeason.emission * 10) / 1000;
+    }
+  }
   function changeSeasion(newSeasion) {
     setSeasion(newSeasion);
     setmonthsInSeasion(getMonthsInSeasion(newSeasion));
+    setMonth(getFirstMonthInSeasion(newSeasion));
   }
 
   function getMonthsInSeasion(seasion) {
@@ -59,6 +72,22 @@ const UserContext = (props) => {
 
       default:
         return [];
+    }
+  }
+
+  function getFirstMonthInSeasion(seasion) {
+    switch (seasion) {
+      case "Frühling":
+        return 3;
+      case "Sommer":
+        return 6;
+      case "Herbst":
+        return 9;
+      case "Winter":
+        return 12;
+
+      default:
+        return 1;
     }
   }
 
@@ -100,6 +129,7 @@ const UserContext = (props) => {
     }
   }
 
+  //Is the Value of the Context so it can be used by other components that are wrapped by the Provider
   let options = {
     seasion,
     month,
@@ -111,6 +141,8 @@ const UserContext = (props) => {
     monthsInSeasion,
     fruiteInSeason,
     fruiteNotInSeason,
+    getEmissionPerKG,
+    isFruiteInSeason,
   };
 
   return (

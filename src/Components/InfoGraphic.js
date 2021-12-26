@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./InfoGraphic.sass";
+import { userContext } from "../context/userContext";
+import CarGif from "../gifs/auto_5.gif";
 const InfoGraphic = ({ name }) => {
+  const { selection, getEmissionPerKG } = useContext(userContext);
+
+  let mon = [];
   return (
     <div className='infoGraphic'>
       <div className='infoGraphic__title'>
@@ -20,6 +25,14 @@ const InfoGraphic = ({ name }) => {
           alt='Strawberry'
           className='infoGraphic__content__image'
         />
+      </div>
+      <div className='carContainer'>
+        {
+          // 1 mile = 1.60934 km
+          // 1kg co2 are 3.5km
+        }
+        The car can drive for {getEmissionPerKG(selection) * 3.5}km
+        <img src={CarGif} alt='' srcset='' />
       </div>
     </div>
   );

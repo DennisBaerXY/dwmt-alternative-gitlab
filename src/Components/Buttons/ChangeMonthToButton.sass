@@ -2,20 +2,29 @@
 @import "../../sass/library/_fonts.sass"
 
 .monthButton
-  font-size: $button-font-size
-  font-family: $button-font-family
-
-  padding: 0.5rem 1rem
-
+  color: white
+  width: 10rem
+  height: 3rem
+  padding: 1rem
+  text-align: center
   margin-right: 1rem
+
+  border-radius: 5px
   border: none
-  border-radius: 0.5rem
-
+  font-size: $button-font-size
+  font-weight: regular
+  font-family: $button-font-size
+  cursor: pointer
+  transition: all 0.3s ease-in-out
   background-color: $primary-color
-  color: #fff
-  width: 150px
-  transition: width 0.2s ease-in-out
-
   &:hover
-    background-color: $secondary-color
-    cursor: pointer
+    background-color: white
+    color: $secondary-color
+    border: 1px solid $secondary-color
+
+    transform: translateY(-4px)
+    &:focus
+      outline: none
+
+      &:active
+            //background-color: $tertiary-color

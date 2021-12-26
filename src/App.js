@@ -47,12 +47,14 @@ function App() {
           </div>
         </div>
       </section>
-      <ContextDebugPrint />
+      {
+        //<ContextDebugPrint />
+      }
       {seasion ? (
-        <div>
+        <>
           <SelectionScreen />
           {selection.name ? <InfoScreen /> : <></>}
-        </div>
+        </>
       ) : (
         <></>
       )}

@@ -6,15 +6,17 @@
     height: 100%
 
 .selectVegtableRound
-    width: 200px
-    height: 200px
+    width: 10rem
+    height: 10rem
 
     border: none
     border-radius: 50%
     background-color: #cecece
     box-shadow: 0 0.2rem 0.3rem #444444
-
+    margin: 0 20px
     cursor: pointer
+
+    flex-shrink: 0
 
 .boxHeader
     margin-top: 3rem
@@ -37,3 +39,13 @@
     border-radius: 0.3rem
     font-family: $h1-font-family
     font-size: 16px
+.fruiteButtonsScrollBox
+    display: flex
+    flex-direction: row
+    height: 15rem
+    width: auto
+    flex-wrap: no-wrap
+    overflow-x: auto
+    overflow-y: hidden
+
+    padding: 2rem 0

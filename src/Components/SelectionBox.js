@@ -1,20 +1,68 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./SelectionBox.sass";
 
-const SelectionBox = () => {
+import { userContext } from "../context/userContext";
+
+/*
+Example of the fruites array:
+ {
+    name: "Erbsen",
+    months: [7],
+    emission: 130,
+    emissionUnit: "g/100g",
+    color: "green",
+    image: "erbsen.jpg",
+  },
+
+  
+
+
+*/
+const SelectionBox = ({ header, bodyText, inSeason }) => {
+  const { month, fruiteInSeason, fruiteNotInSeason, setSelection } =
+    useContext(userContext);
+
+  const [fruiteToDisplay, setFruiteToDisplay] = useState([]);
+
+  useEffect(() => {
+    if (inSeason) {
+      setFruiteToDisplay(fruiteInSeason);
+    } else {
+      setFruiteToDisplay(fruiteNotInSeason);
+    }
+  }, [month, fruiteInSeason, fruiteNotInSeason, inSeason]);
+
+  function displayTheFruite(inSeason) {}
   return (
     <div className='selectionBox'>
+      {/*
       <button className='selectVegtableRound'></button>
 
-      <h2 className='boxHeader'>Lorem, ipsum.</h2>
-      <p className='boxDescription'>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel corrupti
-        officia harum ad distinctio mollitia temporibus porro fugit explicabo
-        dolorum cum vero voluptatibus, atque neque libero, beatae modi molestiae
-        deleniti.
-      </p>
+      <button className='selectVegtableRound'></button>
 
-      <button className='learnMore'>Learn more</button>
+      <button className='selectVegtableRound'></button>
+      */}
+      <div className='fruiteButtonsScrollBox'>
+        {fruiteToDisplay.length > 0 ? (
+          fruiteToDisplay.map((fruite, index) => (
+            <button
+              key={index}
+              className='selectVegtableRound'
+              style={{ backgroundColor: fruite.color }}
+              onClick={() => {
+                setSelection(fruite);
+              }}
+            >
+              {fruite.name}
+            </button>
+          )) //.map
+        ) : (
+          <div>No Fruites</div>
+        )}
+      </div>
+
+      <h2 className='boxHeader'>{header}</h2>
+      <p className='boxDescription'>{bodyText}</p>
     </div>
   );
 };

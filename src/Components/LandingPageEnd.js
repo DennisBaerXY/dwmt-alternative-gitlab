@@ -14,7 +14,7 @@ const LandingPageEnd = () => {
         </div>
         <div className='landingPageEnd__content__text'>
           <h2 className='landingPageEnd__content__text__title'>
-            Lorem ipsum dolor sit amet.
+            Warum saisonale Ernährung gut ist!
           </h2>
           <p className='landingPageEnd__content__text__paragraph'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus

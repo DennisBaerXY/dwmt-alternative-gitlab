@@ -2,6 +2,7 @@ import React from "react";
 
 import { useState, useEffect } from "react";
 import FrutieData from "../data/fruites";
+
 const userContext = React.createContext({});
 const UserContext = (props) => {
   let [seasion, setSeasion] = useState("");
@@ -48,11 +49,25 @@ const UserContext = (props) => {
   const [monthsInSeasion, setmonthsInSeasion] = useState([]);
 
   //Checks if the Fruite is in the given seasion
+  /**
+   * Checks if the selected month is in the given seasion
+   *
+   * @param {Object} fruite a fruite object
+   * @returns {Boolean} true if the fruite is in the selected seasion
+   */
   function isFruiteInSeason(fruite) {
     return fruite.months.includes(month);
   }
 
   //Calculates the Emissions per 1kg of the given fruite
+  /**
+   * Calculates the Emissions per 1kg of the given fruite
+   * and returns the correct emission in seasonal or non-seasonal
+   *
+   *
+   * @param {object} fruite a fruite object
+   * @returns {number} the emissions per 1kg of the given fruite
+   */
 
   function getEmissionPerKG(fruite) {
     let inSeason = isFruiteInSeason(fruite);
@@ -63,6 +78,12 @@ const UserContext = (props) => {
       return fruite.outOfSeason.emission * 0.01;
     }
   }
+  /**
+   *
+   * @param {*} fruite
+   * @param {*} month
+   * @returns
+   */
   function getEmissionPerKGMonth(fruite, month) {
     if (fruite.months.includes(month)) {
       return fruite.inSeason.emission * 0.01;
@@ -77,6 +98,11 @@ const UserContext = (props) => {
   }
 
   //Returns the Months of a given season
+  /**
+   *
+   * @param {string} seasion gets all the Months of a given season
+   * @returns {array} of all the Months of a given season
+   */
   function getMonthsInSeasion(seasion) {
     switch (seasion) {
       case "Frühling":
@@ -92,7 +118,11 @@ const UserContext = (props) => {
         return [];
     }
   }
-
+  /**
+   *
+   * @param {string} seasion A string like "Frühling" or "Herbst"
+   * @returns {number} The first month of the given seasion
+   */
   function getFirstMonthInSeasion(seasion) {
     switch (seasion) {
       case "Frühling":
@@ -110,6 +140,12 @@ const UserContext = (props) => {
   }
 
   //Parameter month is a number from 1 to 12
+  /**
+   * Returns the associated month of the given number
+   *
+   * @param {number} month number from 1 to 12
+   * @returns {string} the associated month of the given number
+   */
   function getMonthDisplayName(month) {
     let monthNames = [
       "Januar",
@@ -129,9 +165,13 @@ const UserContext = (props) => {
     return monthNames[month - 1];
   }
 
-  //Month as number from 1 to 12
-  //season names in german
-
+  /**
+   * Changes the month to the given month and sets the seasion to the
+   * seasion of the given month if its needed
+   *
+   * @param {number} newMonth month to change to
+   * @returns {void} changes the month to the given month
+   */
   function changeMonth(newMonth) {
     //Check in what season the month is
     setMonth(newMonth);
@@ -147,7 +187,12 @@ const UserContext = (props) => {
     }
   }
 
-  //Calculates the Emissions of the Fruite in every season and returns an array
+  /**
+   *Gets all the Emissions for a given fruite and each season emission as a Object
+   *
+   * @param {Object} fruite a fruite object
+   * @returns {Object} returns a Object with the average emissions per kg in that seasson
+   */
   function getEmissionOfFruite(fruite) {
     let emissionsPerMonth = [];
 

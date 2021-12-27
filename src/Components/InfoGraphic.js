@@ -16,22 +16,19 @@ const InfoGraphic = ({ name }) => {
     color: "white",
   };
 
+  //Moves the Car with an animation
   function moveCar() {
     const track = trackRef.current;
     const greenTrack = greenTrackRef.current;
 
     const car = carRef.current;
     const emission = getEmissionPerKG(selection);
-    //Calculate the distance the car has to move in px from the emission and the width of the track
+
     let distance = emission * (track.offsetWidth / 100) * 10;
     const duration = distance / 10;
 
     console.log(`distance: ${distance}`);
     console.log(`duration: ${duration}`);
-
-    //Color the track green for the distance the car has to move
-
-    //Move the car
 
     const carAnimation = car.animate(
       [
@@ -49,9 +46,6 @@ const InfoGraphic = ({ name }) => {
       console.log("animation finished");
       car.style.transform = `translateX(${track.offsetWidth}px)`;
     };
-
-    //Set the green track to the same width as the car has moved
-    //Add the car width to the green track distance
 
     distance += car.offsetWidth / 3;
 

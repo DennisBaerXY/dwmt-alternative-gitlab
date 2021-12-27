@@ -26,7 +26,7 @@ champignon
 let fruites = [
   {
     name: "Erbsen",
-    months: [7],
+    months: [7, 8, 9],
     inSeason: {
       emission: 145,
       emissionUnit: "g/100g",
@@ -41,7 +41,7 @@ let fruites = [
   },
   {
     name: "Karotten",
-    months: [7],
+    months: [2, 3, 4, 5, 6],
     inSeason: {
       emission: 250,
       emissionUnit: "g/100g",
@@ -51,12 +51,12 @@ let fruites = [
       emissionUnit: "g/100g",
     },
 
-    color: "green",
+    color: "orange",
     image: "#",
   },
   {
     name: "Paprika",
-    months: [7],
+    months: [4, 5, 6],
     inSeason: {
       emission: 130,
       emissionUnit: "g/100g",
@@ -66,12 +66,12 @@ let fruites = [
       emissionUnit: "g/100g",
     },
 
-    color: "green",
+    color: "yellow",
     image: "#",
   },
   {
     name: "Rosenkohl",
-    months: [10],
+    months: [6, 7, 8],
     inSeason: {
       emission: 130,
       emissionUnit: "g/100g",
@@ -86,22 +86,22 @@ let fruites = [
   },
   {
     name: "Quitte",
-    months: [10],
+    months: [10, 11, 12],
     inSeason: {
-      emission: 130,
+      emission: 100,
       emissionUnit: "g/100g",
     },
     outOfSeason: {
-      emission: 200,
+      emission: 500,
       emissionUnit: "g/100g",
     },
 
-    color: "green",
+    color: "purple",
     image: "#",
   },
   {
     name: "Lauch",
-    months: [10],
+    months: [9, 10, 11],
     inSeason: {
       emission: 130,
       emissionUnit: "g/100g",
@@ -116,7 +116,7 @@ let fruites = [
   },
   {
     name: "Erdbeere",
-    months: [5],
+    months: [3, 4, 5],
     inSeason: {
       emission: 130,
       emissionUnit: "g/100g",
@@ -126,12 +126,12 @@ let fruites = [
       emissionUnit: "g/100g",
     },
 
-    color: "green",
+    color: "red",
     image: "#",
   },
   {
     name: "Champignon",
-    months: [5],
+    months: [5, 6, 7, 8, 9, 10],
     inSeason: {
       emission: 130,
       emissionUnit: "g/100g",
@@ -141,7 +141,7 @@ let fruites = [
       emissionUnit: "g/100g",
     },
 
-    color: "green",
+    color: "grey",
     image: "#",
   },
 
@@ -204,7 +204,7 @@ let fruites = [
       emissionUnit: "g/100g",
     },
 
-    color: "green",
+    color: "yellow",
     image: "#",
   },
   {
@@ -219,7 +219,7 @@ let fruites = [
       emissionUnit: "g/100g",
     },
 
-    color: "red",
+    color: "orange",
     image: "#",
   },
   {
@@ -249,7 +249,7 @@ let fruites = [
       emissionUnit: "g/100g",
     },
 
-    color: "orange",
+    color: "green",
     image: "#",
   },
 ];

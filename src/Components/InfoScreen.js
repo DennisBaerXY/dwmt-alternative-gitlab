@@ -1,11 +1,18 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./InfoScreen.sass";
 import InfoGraphic from "./InfoGraphic";
 
 import { userContext } from "../context/userContext";
 
 const InfoScreen = () => {
-  const { selection } = useContext(userContext);
+  const { selection, getEmissionOfFruite } = useContext(userContext);
+  const [emissionSeason, setEmissionSeason] = useState({});
+
+  useEffect(() => {
+    const emission = getEmissionOfFruite(selection);
+
+    setEmissionSeason(emission);
+  }, [selection]);
 
   return (
     <div className='infoScreen'>
@@ -15,10 +22,25 @@ const InfoScreen = () => {
         </h1>
 
         <div className='buttonsContainer'>
-          <button className='seasonSwitchButton'>Frühling</button>
-          <button className='seasonSwitchButton'>Sommer</button>
-          <button className='seasonSwitchButton'>Herbst</button>
-          <button className='seasonSwitchButton'>Winter</button>
+          <div>
+            <button className='seasonSwitchButton'>Frühling</button>
+            <p>{emissionSeason.Frühling}</p>
+          </div>
+
+          <div>
+            <button className='seasonSwitchButton'>Sommer</button>
+            <p>{emissionSeason.Sommer}</p>
+          </div>
+
+          <div>
+            <button className='seasonSwitchButton'>Herbst</button>
+            <p>{emissionSeason.Herbst}</p>
+          </div>
+
+          <div>
+            <button className='seasonSwitchButton'>Winter</button>
+            <p>{emissionSeason.Winter}</p>
+          </div>
         </div>
       </div>
 

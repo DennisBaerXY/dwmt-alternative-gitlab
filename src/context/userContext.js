@@ -13,6 +13,12 @@ const UserContext = (props) => {
   let [fruiteInSeason, setFruiteInSeason] = useState([]);
   let [fruiteNotInSeason, setFruiteNotInSeason] = useState([]);
 
+  const seasons = {
+    Frühling: [3, 4, 5],
+    Sommer: [6, 7, 8],
+    Herbst: [9, 10, 11],
+    Winter: [12, 1, 2],
+  };
   useEffect(() => {
     //Init the data
     setfruites(FrutieData);
@@ -41,16 +47,27 @@ const UserContext = (props) => {
   //All the Months in the given seasion of the Northern Hemisphere
   const [monthsInSeasion, setmonthsInSeasion] = useState([]);
 
+  //Checks if the Fruite is in the given seasion
   function isFruiteInSeason(fruite) {
     return fruite.months.includes(month);
   }
 
+  //Calculates the Emissions per 1kg of the given fruite
+
   function getEmissionPerKG(fruite) {
     let inSeason = isFruiteInSeason(fruite);
     if (inSeason) {
-      return (fruite.inSeason.emission * 10) / 1000;
+      // g/100g = kg/KG * 10 / 1000 -> 0.01
+      return fruite.inSeason.emission * 0.01;
     } else {
-      return (fruite.outOfSeason.emission * 10) / 1000;
+      return fruite.outOfSeason.emission * 0.01;
+    }
+  }
+  function getEmissionPerKGMonth(fruite, month) {
+    if (fruite.months.includes(month)) {
+      return fruite.inSeason.emission * 0.01;
+    } else {
+      return fruite.outOfSeason.emission * 0.01;
     }
   }
   function changeSeasion(newSeasion) {
@@ -59,6 +76,7 @@ const UserContext = (props) => {
     setMonth(getFirstMonthInSeasion(newSeasion));
   }
 
+  //Returns the Months of a given season
   function getMonthsInSeasion(seasion) {
     switch (seasion) {
       case "Frühling":
@@ -129,6 +147,26 @@ const UserContext = (props) => {
     }
   }
 
+  //Calculates the Emissions of the Fruite in every season and returns an array
+  function getEmissionOfFruite(fruite) {
+    let emissionsPerMonth = [];
+
+    for (let month = 1; month <= 12; month++) {
+      emissionsPerMonth.push(getEmissionPerKGMonth(fruite, month));
+    }
+
+    let seasonEmissions = {
+      Frühling: emissionsPerMonth.slice(2, 4).reduce((a, b) => a + b),
+      Sommer: emissionsPerMonth.slice(5, 7).reduce((a, b) => a + b),
+      Herbst: emissionsPerMonth.slice(8, 10).reduce((a, b) => a + b),
+      Winter: emissionsPerMonth
+        .slice(0, 1)
+        .concat(emissionsPerMonth[11])
+        .reduce((a, b) => a + b),
+    };
+
+    return seasonEmissions;
+  }
   //Is the Value of the Context so it can be used by other components that are wrapped by the Provider
   let options = {
     seasion,
@@ -143,6 +181,7 @@ const UserContext = (props) => {
     fruiteNotInSeason,
     getEmissionPerKG,
     isFruiteInSeason,
+    getEmissionOfFruite,
   };
 
   return (

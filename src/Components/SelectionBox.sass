@@ -11,12 +11,21 @@
 
     border: none
     border-radius: 50%
-    background-color: #cecece
     box-shadow: 0 0.2rem 0.3rem #444444
     margin: 0 20px
     cursor: pointer
+    background-position: center
+    background-origin: content-box
+    background-size: 70%
+    background-repeat: no-repeat
 
     flex-shrink: 0
+
+    transition: all 0.3s ease-in-out
+
+    &:hover
+        box-shadow: 0 0.2rem 0.3rem #444444
+        transform: scale(1.1)
 
 .boxHeader
     margin-top: 3rem

@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import "./SelectionBox.sass";
 
 import { userContext } from "../context/userContext";
+import FruiteDisplayButton from "./FruiteDisplayButton";
 
 /*
 Example of the fruites array:
@@ -43,18 +44,15 @@ const SelectionBox = ({ header, bodyText, inSeason }) => {
       */}
 			<div className="fruiteButtonsScrollBox">
 				{fruiteToDisplay.length > 0 ? (
-					fruiteToDisplay.map((fruite, index) => (
-						<button
-							key={index}
-							className="selectVegtableRound"
-							style={{ backgroundColor: fruite.color }}
-							onClick={() => {
-								setSelection(fruite);
-							}}
-						>
-							{fruite.name}
-						</button>
-					)) //.map
+					fruiteToDisplay.map((fruite, index) => {
+						return (
+							<FruiteDisplayButton
+								key={index}
+								fruite={fruite}
+								setSelection={setSelection}
+							/>
+						);
+					}) //.map
 				) : (
 					<div>No Fruites</div>
 				)}

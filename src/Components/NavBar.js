@@ -19,6 +19,15 @@ const navBar = ({ displaySeason }) => {
 						>
 							{displaySeason}
 						</span>
+
+						<span
+							style={{
+								fontSize: "1.3em",
+								marginLeft: "1em",
+							}}
+						>
+							Season
+						</span>
 					</p>
 				) : (
 					<>

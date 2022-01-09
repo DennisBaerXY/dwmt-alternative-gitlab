@@ -21,6 +21,8 @@ champignon
 
 */
 
+import { image } from "d3";
+
 //Mockup Data
 
 /*
@@ -66,7 +68,9 @@ let fruites = [
 	{
 		name: "Erbsen",
 		description: "",
-		image: "erbsen.jpg",
+		image: './images/erbsen.jpg',
+		//image:<img src='erbsen.jpg' alt=''></img>,
+		//image: URL("erbsen.jpg"),
 		color: "green",
 		inSeason: {
 			season: "Sommer",

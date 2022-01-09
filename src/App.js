@@ -11,57 +11,57 @@ import { userContext } from "./context/userContext";
 //Seasions northern hemisphere: Winter, Spring, Summer, Autumn
 
 function App() {
-  const { seasion, changeSeasion, selection } = useContext(userContext);
-  return (
-    //Main Page
-    <div className='App'>
-      <NavBar displaySeason={seasion} />
-      <section className='startMedia'>
-        <div className='landingPageHeaderContainer'>
-          <h1 className='saisoDecoFont'>Saiso</h1>
-          <div>
-            <button
-              className='landingButton '
-              onClick={() => changeSeasion("Frühling")}
-            >
-              Frühling
-            </button>
-            <button
-              className='landingButton'
-              onClick={() => changeSeasion("Sommer")}
-            >
-              Sommer
-            </button>
-            <button
-              className='landingButton'
-              onClick={() => changeSeasion("Herbst")}
-            >
-              Herbst
-            </button>
-            <button
-              className='landingButton'
-              onClick={() => changeSeasion("Winter")}
-            >
-              Winter
-            </button>
-          </div>
-        </div>
-      </section>
-      {
-        //<ContextDebugPrint />
-      }
-      {seasion ? (
-        <>
-          <SelectionScreen />
-          {selection.name ? <InfoScreen /> : <></>}
-        </>
-      ) : (
-        <></>
-      )}
-      <LandingPageEnd />
-      <Footer />
-    </div>
-  );
+	const { seasion, changeSeasion, selection } = useContext(userContext);
+	return (
+		//Main Page
+		<div className="App">
+			<NavBar displaySeason={seasion} />
+			<section className="startMedia">
+				<div className="landingPageHeaderContainer">
+					<h1 className="saisoDecoFont">Saiso</h1>
+					<div>
+						<button
+							className="landingButton "
+							onClick={() => changeSeasion("Frühling")}
+						>
+							Frühling
+						</button>
+						<button
+							className="landingButton"
+							onClick={() => changeSeasion("Sommer")}
+						>
+							Sommer
+						</button>
+						<button
+							className="landingButton"
+							onClick={() => changeSeasion("Herbst")}
+						>
+							Herbst
+						</button>
+						<button
+							className="landingButton"
+							onClick={() => changeSeasion("Winter")}
+						>
+							Winter
+						</button>
+					</div>
+				</div>
+			</section>
+			{
+				//<ContextDebugPrint />
+			}
+			{seasion ? (
+				<>
+					<SelectionScreen />
+					{selection.name ? <InfoScreen /> : <></>}
+				</>
+			) : (
+				<></>
+			)}
+			<LandingPageEnd />
+			<Footer />
+		</div>
+	);
 }
 
 export default App;

@@ -1,0 +1,25 @@
+@import "../sass/library/_colors"
+@import "../sass/library/_fonts"
+
+.fruiteEmissionGraph
+    height: 100%
+    width: 100%
+
+.bar
+    fill: $secondary-color
+    stroke-width: 1px
+
+    &:hover
+        //Lighten the color
+
+        fill: lighten($secondary-color, 10%)
+
+.title
+    font-size: 1.3rem
+    font-family: $h1-font-family
+
+.xAxis
+    font-size: 1.1em
+    font-family: $h1-font-family
+    font-weight: regular
+    fill: $h1-color

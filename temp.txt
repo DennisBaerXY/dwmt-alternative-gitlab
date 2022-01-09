@@ -1,0 +1,22 @@
+/*
+
+Data for fruits.
+Juli: 
+Erbsen
+Karotten
+Paprika
+
+
+Oktober:
+Rosenkohl
+Quitte
+Lauch
+
+
+Mai:
+Erdbeere
+champignon
+
+
+
+*/

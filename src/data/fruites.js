@@ -140,7 +140,7 @@ let fruites = [
 	{
 		name: "Rosenkohl",
 		description: "",
-		image: "#",
+		image: "Rosenkohl.jpg",
 		color: "green",
 		inSeason: {
 			season: "Autumn",

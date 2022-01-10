@@ -67,8 +67,6 @@ let fruites = [
 		name: "Erbsen",
 		description: "",
 		image: "erbsen.jpg",
-		//image:<img src='erbsen.jpg' alt=''></img>,
-		//image: URL("erbsen.jpg"),
 		color: "green",
 		inSeason: {
 			season: "Sommer",

@@ -248,9 +248,6 @@ const UserContext = (props) => {
 		return seasonEmissions;
 	}
 
-	function getInfographic(selection){
-		return fruites.name
-	}
 	//Is the Value of the Context so it can be used by other components that are wrapped by the Provider
 	let options = {
 		seasion,

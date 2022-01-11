@@ -127,8 +127,8 @@ const InfoGraphic = ({ name }) => {
 					{(getEmissionPerKGMonth(selection, month) * 3.5).toFixed(1)}km Fahren
 					mit den Emission pro kg von {selection.name}
 				</p>
-
-				<img src={CarGif} alt="" srcset="" ref={carRef} />
+				
+				<img className= "hover" src={CarGif} alt="" srcset="" ref={carRef} onClick={() => moveCar()} />
 				{
 					//add dashed line to the track
 				}

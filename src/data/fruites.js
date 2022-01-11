@@ -30,6 +30,7 @@ champignon
     "name": "",
     "description": "",
     "image": "", //# if no image is given, the name will be used
+	"infographic": "",
     "color": "",
     
     inSeason: 

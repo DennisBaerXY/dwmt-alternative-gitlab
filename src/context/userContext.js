@@ -20,6 +20,7 @@ const UserContext = (props) => {
 		Herbst: [9, 10, 11],
 		Winter: [12, 1, 2],
 	};
+
 	useEffect(() => {
 		//Init the data
 		setfruites(FrutieData);
@@ -245,6 +246,10 @@ const UserContext = (props) => {
 		};
 
 		return seasonEmissions;
+	}
+
+	function getInfographic(selection){
+		return fruites.name
 	}
 	//Is the Value of the Context so it can be used by other components that are wrapped by the Provider
 	let options = {

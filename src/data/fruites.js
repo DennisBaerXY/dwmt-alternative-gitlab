@@ -67,6 +67,7 @@ let fruites = [
 		name: "Erbsen",
 		description: "",
 		image: "erbsen.jpg",
+		infographic: "#",
 		color: "green",
 		inSeason: {
 			season: "Sommer",
@@ -91,6 +92,7 @@ let fruites = [
 		name: "Karotten",
 		description: "",
 		image: "karotten.jpg",
+		infographic: "InfografikKarotte.jpg",
 		color: "yellow",
 		inSeason: {
 			season: "Sommer",
@@ -115,6 +117,7 @@ let fruites = [
 		name: "Paprika",
 		description: "",
 		image: "paprika.jpg",
+		infographic: "#",
 		color: "red",
 		inSeason: {
 			season: "Sommer",
@@ -139,6 +142,7 @@ let fruites = [
 		name: "Rosenkohl",
 		description: "",
 		image: "Rosenkohl.jpg",
+		infographic: "#",
 		color: "green",
 		inSeason: {
 			season: "Autumn",
@@ -163,6 +167,7 @@ let fruites = [
 		name: "Quitte",
 		description: "",
 		image: "quitten.jpg",
+		infographic:"#",
 		color: "green",
 		inSeason: {
 			season: "Autumn",
@@ -187,6 +192,7 @@ let fruites = [
 		name: "Lauch",
 		description: "",
 		image: "lauch.jpg",
+		infographic:"#",
 		color: "green",
 		inSeason: {
 			season: "Autumn",
@@ -211,6 +217,7 @@ let fruites = [
 		name: "Erdbeere",
 		description: "",
 		image: "erdbeere.jpg",
+		infographic:"InfografikErdbeere.jpg",
 		color: "red",
 		inSeason: {
 			season: "Spring",
@@ -235,6 +242,7 @@ let fruites = [
 		name: "champignon",
 		description: "",
 		image: "champion.jpg",
+		infographic:"#",
 		color: "green",
 		inSeason: {
 			season: "Spring",

@@ -3,7 +3,7 @@ import "./InfoGraphic.sass";
 import { userContext } from "../context/userContext";
 import CarGif from "../gifs/auto_5.gif";
 const InfoGraphic = ({ name }) => {
-	const { selection, getEmissionPerKGMonth, month } = useContext(userContext);
+	const { selection, getEmissionPerKGMonth, month} = useContext(userContext);
 	const trackRef = useRef();
 	const carRef = useRef();
 	const greenTrackRef = useRef();
@@ -12,9 +12,10 @@ const InfoGraphic = ({ name }) => {
 		backgroundColor: "#363636",
 		width: "100%",
 		height: "2rem",
-
 		color: "white",
 	};
+
+
 
 	//Moves the Car with an animation
 	function moveCar() {
@@ -86,8 +87,15 @@ const InfoGraphic = ({ name }) => {
 	}
 
 	return (
-		<div className="infoGraphic">
-			<div className="infographic-container">
+		//<div className="infoGraphic">
+		<div>
+			<img src="images/InfografikErdbeere.jpg"
+			alt="" 
+			//srcset="" 
+			//ref={selection.infografic} 
+			className="InfoGraphic"
+			/>
+			{/* <div className="infographic-container">
 				<div className="infoGraphic__title">
 					<h1>{name}</h1>
 				</div>
@@ -101,12 +109,13 @@ const InfoGraphic = ({ name }) => {
 						</p>
 					</div>
 					<img
-						src="https://via.placeholder.com/300"
+						src="images/erdbeere.jpg"
+						//src="https://via.placeholder.com/300"
 						alt="Strawberry"
 						className="infoGraphic__content__image"
 					/>
 				</div>
-			</div>
+			</div> */}
 
 			<div className="carContainer">
 				{

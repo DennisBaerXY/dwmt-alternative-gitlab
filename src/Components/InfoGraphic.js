@@ -8,6 +8,7 @@ const InfoGraphic = ({ name }) => {
 	const carRef = useRef();
 	const greenTrackRef = useRef();
 
+
 	const trackStyle = {
 		backgroundColor: "#363636",
 		width: "100%",
@@ -122,26 +123,28 @@ const InfoGraphic = ({ name }) => {
 					// 1 mile = 1.60934 km
 					// 1kg co2 are 3.5km
 				}
-				<p className="InfoText">
-					Das Auto kann{" "}
-					{(getEmissionPerKGMonth(selection, month) * 3.5).toFixed(1)}km Fahren
-					mit den Emission pro kg von {selection.name}
-				</p>
 				
+				<p>Klicke auf das Auto, um dir die Emmison in kg anzeigen zu lassen, die der Transport von  {selection.name} im ... {selection.name.month} verursachen würde.</p>
+
+
 				<img className= "hover" src={CarGif} alt="" srcset="" ref={carRef} onClick={() => moveCar()} />
 				{
 					//add dashed line to the track
 				}
-
 				<div className="track" ref={trackRef} style={trackStyle}>
 					<div className="greenTrack" ref={greenTrackRef}>
 						<div className="greenTrack__line"></div>
 					</div>
 				</div>
-				<span>
-					<button onClick={() => moveCar()}>Play </button>
+				<span className = "buttonsContainer">
 					<button onClick={() => resetCar()}>Reset </button>
 				</span>
+
+				<p className="InfoText">
+					Das Auto kann{" "}
+					{(getEmissionPerKGMonth(selection, month) * 3.5).toFixed(1)}km Fahren
+					mit den Emission pro kg von {selection.name} fahren.
+				</p>
 			</div>
 		</div>
 	);

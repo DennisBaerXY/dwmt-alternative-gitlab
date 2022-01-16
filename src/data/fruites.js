@@ -68,6 +68,7 @@ let fruites = [
 		description: "",
 		image: "erbsen.jpg",
 		color: "green",
+		infoGraphic: "#",
 		inSeason: {
 			season: "Sommer",
 			months: [7, 8, 9],
@@ -92,6 +93,8 @@ let fruites = [
 		description: "",
 		image: "karotten.jpg",
 		color: "yellow",
+		infoGraphic: "Info_Karotte.jpg",
+
 		inSeason: {
 			season: "Sommer",
 			months: [7, 8, 9],
@@ -116,6 +119,8 @@ let fruites = [
 		description: "",
 		image: "paprika.jpg",
 		color: "red",
+		infoGraphic: "#",
+
 		inSeason: {
 			season: "Sommer",
 			months: [7, 8, 9],
@@ -140,6 +145,8 @@ let fruites = [
 		description: "",
 		image: "Rosenkohl.jpg",
 		color: "green",
+		infoGraphic: "#",
+
 		inSeason: {
 			season: "Autumn",
 			months: [10, 11],
@@ -164,6 +171,8 @@ let fruites = [
 		description: "",
 		image: "quitten.jpg",
 		color: "green",
+		infoGraphic: "#",
+
 		inSeason: {
 			season: "Autumn",
 			months: [10, 11],
@@ -188,6 +197,8 @@ let fruites = [
 		description: "",
 		image: "lauch.jpg",
 		color: "green",
+		infoGraphic: "#",
+
 		inSeason: {
 			season: "Autumn",
 			months: [8, 9, 10],
@@ -212,6 +223,7 @@ let fruites = [
 		description: "",
 		image: "erdbeere.jpg",
 		color: "red",
+		infoGraphic: "Info_Erdbeere.jpg",
 		inSeason: {
 			season: "Spring",
 			months: [4, 5, 6],
@@ -236,6 +248,8 @@ let fruites = [
 		description: "",
 		image: "champion.jpg",
 		color: "green",
+		infoGraphic: "#",
+
 		inSeason: {
 			season: "Spring",
 			months: [5, 6, 7],

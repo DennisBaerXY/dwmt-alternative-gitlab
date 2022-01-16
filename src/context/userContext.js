@@ -1,6 +1,4 @@
-import React from "react";
-
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import FrutieData from "../data/fruites";
 
 const userContext = React.createContext({});
@@ -153,6 +151,7 @@ const UserContext = (props) => {
 				return [];
 		}
 	}
+
 	/**
 	 *
 	 * @param {string} seasion A string like "Frühling" or "Herbst"
@@ -246,6 +245,7 @@ const UserContext = (props) => {
 
 		return seasonEmissions;
 	}
+
 	//Is the Value of the Context so it can be used by other components that are wrapped by the Provider
 	let options = {
 		seasion,

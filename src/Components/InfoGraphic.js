@@ -102,7 +102,6 @@ const InfoGraphic = ({ name }) => {
 					<img
 						src={CarGif}
 						alt=""
-						srcset=""
 						ref={carRef}
 						className="car"
 						onClick={() => {

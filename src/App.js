@@ -7,12 +7,34 @@ import LandingPageEnd from "./Components/LandingPageEnd";
 import NavBar from "./Components/NavBar";
 import SelectionScreen from "./Components/SelectionScreen";
 
+import { useState, useEffect } from "react";
+
 import { userContext } from "./context/userContext";
+import { refContext } from "./context/refContext";
 //Seasions northern hemisphere: Winter, Spring, Summer, Autumn
 
 function App() {
 	const { seasion, changeSeasion, selection } = useContext(userContext);
-	const scroll = useRef(null);
+	const { addRef, removeRef, getRef, refList } = useContext(refContext);
+	const [clickedToGoDown, setclickedToGoDown] = useState(false);
+
+	function scrollToSelectionScreen() {
+		if (getRef("selectionScreen")) {
+			getRef("selectionScreen").current.scrollIntoView({
+				behavior: "smooth",
+				block: "start",
+			});
+			setclickedToGoDown(false);
+		} else {
+			setclickedToGoDown(true);
+		}
+	}
+
+	useEffect(() => {
+		if (clickedToGoDown) {
+			scrollToSelectionScreen();
+		}
+	}, [clickedToGoDown, refList]);
 
 	return (
 		//Main Page
@@ -26,6 +48,7 @@ function App() {
 							className="landingButton "
 							onClick={() => {
 								changeSeasion("Frühling");
+								setclickedToGoDown(true);
 							}}
 						>
 							Frühling
@@ -34,6 +57,7 @@ function App() {
 							className="landingButton"
 							onClick={() => {
 								changeSeasion("Sommer");
+								setclickedToGoDown(true);
 							}}
 						>
 							Sommer
@@ -42,6 +66,7 @@ function App() {
 							className="landingButton"
 							onClick={() => {
 								changeSeasion("Herbst");
+								scrollToSelectionScreen();
 							}}
 						>
 							Herbst
@@ -50,6 +75,7 @@ function App() {
 							className="landingButton"
 							onClick={() => {
 								changeSeasion("Winter");
+								scrollToSelectionScreen();
 							}}
 						>
 							Winter

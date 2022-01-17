@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./SelectionBox.sass";
+
+import { refContext } from "../context/refContext";
 
 const FruiteDisplayButton = ({ fruite, setSelection }) => {
 	const [image, setImage] = useState();
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
+
+	const { addRef, removeRef, getRef, refList } = useContext(refContext);
+	const [scrollDown, setscrollDown] = useState(false);
 
 	useEffect(() => {
 		//Import the image file asynchronously
@@ -23,6 +28,24 @@ const FruiteDisplayButton = ({ fruite, setSelection }) => {
 
 	useEffect(() => {}, [fruite]);
 
+	function scrollToNextScreen() {
+		if (getRef("infoScreen")) {
+			getRef("infoScreen").current.scrollIntoView({
+				behavior: "smooth",
+				block: "start",
+			});
+			setscrollDown(false);
+		} else {
+			setscrollDown(true);
+		}
+	}
+
+	useEffect(() => {
+		if (scrollDown) {
+			scrollToNextScreen();
+		}
+	}, [scrollDown, refList]);
+
 	if (loading && !error) {
 		return (
 			<button
@@ -32,13 +55,13 @@ const FruiteDisplayButton = ({ fruite, setSelection }) => {
 				}}
 				onClick={() => {
 					setSelection(fruite);
+					setscrollDown(true);
 				}}
 			>
 				{fruite.name}
 			</button>
 		);
 	} else {
-		console.log(`url(../images/${fruite.image})`);
 		return (
 			<button
 				className="selectVegtableRound"
@@ -49,6 +72,7 @@ const FruiteDisplayButton = ({ fruite, setSelection }) => {
 				}}
 				onClick={() => {
 					setSelection(fruite);
+					setscrollDown(true);
 				}}
 			>
 				{fruite.image !== "#" ? <></> : <>{fruite.name}</>}

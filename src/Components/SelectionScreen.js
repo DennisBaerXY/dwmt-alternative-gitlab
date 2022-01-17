@@ -8,7 +8,7 @@ import ChangeMonthToButton from "./Buttons/ChangeMonthToButton";
 const SelectionScreen = () => {
 	const { monthsInSeasion } = useContext(userContext);
 	return (
-		<Screen>
+		<Screen name={"selectionScreen"}>
 			<div className="selectionScreen" id="SelectionPos">
 				<div className="flexContainerRow">
 					<h1 className="selectionScreenHeader">Iss mit der Jahreszeit</h1>

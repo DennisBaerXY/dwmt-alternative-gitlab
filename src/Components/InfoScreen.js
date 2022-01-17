@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import "./InfoScreen.sass";
 import InfoGraphic from "./InfoGraphic";
+import Screen from "./Screen";
 import FruiteEmissionGraph from "./FruiteEmissionGraph";
 
 import { userContext } from "../context/userContext";
@@ -48,79 +49,81 @@ const InfoScreen = () => {
 	const graphContainerRef = useRef();
 
 	return (
-		<div className="infoScreen">
-			<div className="headingAndButtonsContainer">
-				<h1 className="screenHeader">
-					Vergleiche den CO2 Verbrauch zu anderen Zeiten
-				</h1>
+		<Screen name={"infoScreen"}>
+			<div className="infoScreen">
+				<div className="headingAndButtonsContainer">
+					<h1 className="screenHeader">
+						Vergleiche den CO2 Verbrauch zu anderen Zeiten
+					</h1>
 
-				<div className="dynamicGraph" ref={graphContainerRef}>
-					{emissionsMonthArray && selectedMonths ? (
-						<FruiteEmissionGraph
-							passed={{ emissionsMonthArray, selectedMonths }}
-						/>
-					) : (
+					<div className="dynamicGraph" ref={graphContainerRef}>
+						{emissionsMonthArray && selectedMonths ? (
+							<FruiteEmissionGraph
+								passed={{ emissionsMonthArray, selectedMonths }}
+							/>
+						) : (
+							<div>
+								<p>Bitte wähle einen Fruite aus um eine Graphik zu sehen.</p>
+							</div>
+						)}
+					</div>
+					<div className="buttonsContainer">
 						<div>
-							<p>Bitte wähle einen Fruite aus um eine Graphik zu sehen.</p>
+							<button
+								className="seasonSwitchButton"
+								onClick={() => {
+									setSelectedMonths([3, 4, 5]);
+								}}
+							>
+								Frühling
+							</button>
 						</div>
-					)}
-				</div>
-				<div className="buttonsContainer">
-					<div>
-						<button
-							className="seasonSwitchButton"
-							onClick={() => {
-								setSelectedMonths([3, 4, 5]);
-							}}
-						>
-							Frühling
-						</button>
-					</div>
 
-					<div>
-						<button
-							className="seasonSwitchButton"
-							onClick={() => setSelectedMonths([6, 7, 8])}
-						>
-							Sommer
-						</button>
-					</div>
+						<div>
+							<button
+								className="seasonSwitchButton"
+								onClick={() => setSelectedMonths([6, 7, 8])}
+							>
+								Sommer
+							</button>
+						</div>
 
-					<div>
-						<button
-							className="seasonSwitchButton"
-							onClick={() => setSelectedMonths([9, 10, 11])}
-						>
-							Herbst
-						</button>
-					</div>
+						<div>
+							<button
+								className="seasonSwitchButton"
+								onClick={() => setSelectedMonths([9, 10, 11])}
+							>
+								Herbst
+							</button>
+						</div>
 
-					<div>
-						<button
-							className="seasonSwitchButton"
-							onClick={() => setSelectedMonths([12, 1, 2])}
-						>
-							Winter
-						</button>
-					</div>
+						<div>
+							<button
+								className="seasonSwitchButton"
+								onClick={() => setSelectedMonths([12, 1, 2])}
+							>
+								Winter
+							</button>
+						</div>
 
-					<div>
-						<button
-							className="seasonSwitchButton"
-							onClick={() =>
-								setSelectedMonths([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
-							}
-						>
-							Jahr
-						</button>
+						<div>
+							<button
+								className="seasonSwitchButton"
+								onClick={() =>
+									setSelectedMonths([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+								}
+							>
+								Jahr
+							</button>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<div className="infoGraphicContainer">
-				<InfoGraphic name={selection.name} />
+				<div className="infoGraphicContainer">
+					<InfoGraphic name={selection.name} />
+				</div>
 			</div>
-		</div>
+		</Screen>
 	);
 };
 

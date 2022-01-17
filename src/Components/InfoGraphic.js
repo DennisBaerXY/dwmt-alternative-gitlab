@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from "react";
 import "./InfoGraphic.sass";
 import { userContext } from "../context/userContext";
-import CarGif from "../gifs/auto_5.gif";
+import CarGif from "../gifs/car.gif";
 const InfoGraphic = ({ name }) => {
 	const { selection, getEmissionPerKGMonth, month } = useContext(userContext);
 	const trackRef = useRef();
@@ -37,8 +37,8 @@ const InfoGraphic = ({ name }) => {
 
 		const carAnimation = car.animate(
 			[
-				{ transform: `translateX(0) scale(1.5)` },
-				{ transform: `translateX(${distance}px) scale(1.5)` },
+				{ transform: `translateX(0) scale(1)` },
+				{ transform: `translateX(${distance}px) scale(1)` },
 			],
 			{
 				duration: 100 * duration,

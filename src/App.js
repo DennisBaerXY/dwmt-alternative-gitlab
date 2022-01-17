@@ -1,6 +1,5 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import "./App.sass";
-import ContextDebugPrint from "./Components/ContextDebugPrint";
 import Footer from "./Components/Footer";
 import InfoScreen from "./Components/InfoScreen";
 import LandingPageEnd from "./Components/LandingPageEnd";
@@ -15,7 +14,7 @@ import { refContext } from "./context/refContext";
 
 function App() {
 	const { seasion, changeSeasion, selection } = useContext(userContext);
-	const { addRef, removeRef, getRef, refList } = useContext(refContext);
+	const { getRef, refList } = useContext(refContext);
 	const [clickedToGoDown, setclickedToGoDown] = useState(false);
 
 	function scrollToSelectionScreen() {
@@ -34,6 +33,7 @@ function App() {
 		if (clickedToGoDown) {
 			scrollToSelectionScreen();
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [clickedToGoDown, refList]);
 
 	return (
@@ -43,7 +43,7 @@ function App() {
 			<section className="startMedia">
 				<div className="landingPageHeaderContainer">
 					<h1 className="saisoDecoFont">Saiso</h1>
-					<div>
+					<div className="buttonContainer">
 						<button
 							className="landingButton "
 							onClick={() => {

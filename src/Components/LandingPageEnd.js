@@ -1,6 +1,5 @@
 import React from "react";
 import "./LandingPageEnd.sass";
-import media from "../images/baum.png";
 
 const LandingPageEnd = () => {
 	return (

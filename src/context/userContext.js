@@ -12,13 +12,6 @@ const UserContext = (props) => {
 	let [fruiteInSeason, setFruiteInSeason] = useState([]);
 	let [fruiteNotInSeason, setFruiteNotInSeason] = useState([]);
 
-	const seasons = {
-		Frühling: [3, 4, 5],
-		Sommer: [6, 7, 8],
-		Herbst: [9, 10, 11],
-		Winter: [12, 1, 2],
-	};
-
 	useEffect(() => {
 		//Init the data
 		setfruites(FrutieData);
@@ -42,6 +35,7 @@ const UserContext = (props) => {
 		return () => {
 			setFruiteInSeason([]);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [month]);
 
 	//All the Months in the given seasion of the Northern Hemisphere

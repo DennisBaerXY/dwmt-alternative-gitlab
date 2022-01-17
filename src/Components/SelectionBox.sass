@@ -1,9 +1,20 @@
 @import "../sass/library/colors"
 @import "../sass/library/fonts"
 
+//https://www.lambdatest.com/blog/how-to-use-css-breakpoints-for-responsive-design/
+// 640px: max Mobile
+//768px: max Tablet
+// 1024px: max LapTop
+// 1200px: max Desktop
+// 1201px and more —  Extra large screens, TV
+
 .selectionBox
     width: 45%
     height: 100%
+
+    @media screen and (max-width: 768px)
+        width: 100%
+        padding: 0 1rem
 
 .selectVegtableRound
     width: 10rem

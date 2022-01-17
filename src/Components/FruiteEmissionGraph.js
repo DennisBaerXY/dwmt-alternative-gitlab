@@ -1,22 +1,18 @@
 //Import d3
 import React from "react";
 import "./FruiteEmissionGraph.sass";
-import { useEffect, useRef, useState, useContext } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-import { schemeGnBu } from "d3";
-import { userContext } from "../context/userContext";
 
 const FruiteEmissionGraph = ({
 	//array of month numbers [1,2,3,4,5,6,7,8,9,10,11,12]
 	passed,
 }) => {
 	const ref = useRef();
-	const { selection } = useContext(userContext);
 
 	const [componentHeight, setComponentHeight] = useState(0);
 	const [componentWidth, setComponentWidth] = useState(0);
 	const [localData, setLocalData] = useState([]);
-	const [localSelectedMonths, setLocalSelectedMonths] = useState([]);
 
 	useEffect(() => {
 		const { emissionsMonthArray, selectedMonths } = passed;
@@ -28,12 +24,12 @@ const FruiteEmissionGraph = ({
 		}
 
 		setLocalData(displayedMonths);
-		setLocalSelectedMonths(selectedMonths);
 	}, [passed]);
 
 	useEffect(() => {
 		setComponentHeight(ref.current.clientHeight);
 		setComponentWidth(ref.current.clientWidth);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [ref, document.body.clientWidth, document.body.clientHeight]);
 
 	useEffect(() => {
@@ -64,7 +60,11 @@ const FruiteEmissionGraph = ({
 			.selectAll("text")
 			.attr("class", "xAxis");
 
-		graph.append("g").call(d3.axisLeft(y));
+		graph
+			.append("g")
+			.call(d3.axisLeft(y))
+			.selectAll("text")
+			.attr("class", "yAxis");
 
 		graph
 			.selectAll("bar")

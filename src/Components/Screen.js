@@ -14,7 +14,8 @@ const Screen = (props) => {
 		return () => {
 			removeRef({ name });
 		};
-	}, []);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [name]);
 
 	return (
 		<div

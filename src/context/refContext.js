@@ -1,5 +1,4 @@
-import React, { useRef, useState } from "react";
-import { useContext } from "react";
+import React, { useState } from "react";
 const refContext = React.createContext({});
 
 const RefContext = (props) => {
@@ -30,7 +29,7 @@ const RefContext = (props) => {
 		removeRef,
 		getRef,
 	};
-	const context = useContext(refContext);
+
 	return <refContext.Provider value={options}>{children}</refContext.Provider>;
 };
 

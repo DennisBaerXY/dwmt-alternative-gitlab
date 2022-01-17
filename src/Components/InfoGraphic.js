@@ -37,8 +37,8 @@ const InfoGraphic = ({ name }) => {
 
 		const carAnimation = car.animate(
 			[
-				{ transform: `translateX(0) scale(1)` },
-				{ transform: `translateX(${distance}px) scale(1)` },
+				{ transform: `translateX(0) ` },
+				{ transform: `translateX(${distance}px) ` },
 			],
 			{
 				duration: 100 * duration,
@@ -52,7 +52,7 @@ const InfoGraphic = ({ name }) => {
 			car.style.transform = `translateX(${track.offsetWidth}px)`;
 		};
 
-		distance += car.offsetWidth / 3;
+		distance += car.offsetWidth / 2;
 
 		greenTrack.style.width = `${distance}px`;
 

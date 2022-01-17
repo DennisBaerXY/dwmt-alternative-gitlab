@@ -4,6 +4,8 @@
 .fruiteEmissionGraph
     height: 100%
     width: 100%
+    padding: 0
+    overflow: visible
 
 .bar
     fill: lighten($secondary-color, 10%)
@@ -20,7 +22,14 @@
     font-family: $h1-font-family
 
 .xAxis
-    font-size: 1.1em
+    font-size: 1.8em
+    font-family: $h1-font-family
+    font-weight: regular
+    fill: $h1-color
+
+    transform: rotate(-30deg) translate(-20px, 5px)
+.yAxis
+    font-size: 1.8em
     font-family: $h1-font-family
     font-weight: regular
     fill: $h1-color

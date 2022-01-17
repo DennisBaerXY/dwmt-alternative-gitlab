@@ -9,7 +9,7 @@ import { userContext } from "../context/userContext";
 const InfoScreen = () => {
 	const {
 		selection,
-		getEmissionOfFruite,
+
 		getEmissionPerKGArray,
 		getMonthDisplayName,
 	} = useContext(userContext);
@@ -44,7 +44,7 @@ const InfoScreen = () => {
 
 		console.log(monthsWithEmission, "Month Emissions");
 		setEmissionsMonthArray(monthsWithEmission);
-	}, [selection]);
+	}, [getEmissionPerKGArray, getMonthDisplayName, selection]);
 
 	const graphContainerRef = useRef();
 

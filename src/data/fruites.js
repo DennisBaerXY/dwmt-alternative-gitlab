@@ -68,7 +68,7 @@ let fruites = [
 		description: "",
 		image: "erbsen.jpg",
 		color: "green",
-		infoGraphic: "#",
+		infoGraphic: "Info_Erbse.jpg",
 		inSeason: {
 			season: "Sommer",
 			months: [7, 8, 9],

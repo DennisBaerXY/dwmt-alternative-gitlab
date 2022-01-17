@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import "./App.sass";
 import ContextDebugPrint from "./Components/ContextDebugPrint";
 import Footer from "./Components/Footer";
@@ -12,6 +12,8 @@ import { userContext } from "./context/userContext";
 
 function App() {
 	const { seasion, changeSeasion, selection } = useContext(userContext);
+	const scroll = useRef(null);
+
 	return (
 		//Main Page
 		<div className="App">
@@ -22,25 +24,33 @@ function App() {
 					<div>
 						<button
 							className="landingButton "
-							onClick={() => changeSeasion("Frühling")}
+							onClick={() => {
+								changeSeasion("Frühling");
+							}}
 						>
 							Frühling
 						</button>
 						<button
 							className="landingButton"
-							onClick={() => changeSeasion("Sommer")}
+							onClick={() => {
+								changeSeasion("Sommer");
+							}}
 						>
 							Sommer
 						</button>
 						<button
 							className="landingButton"
-							onClick={() => changeSeasion("Herbst")}
+							onClick={() => {
+								changeSeasion("Herbst");
+							}}
 						>
 							Herbst
 						</button>
 						<button
 							className="landingButton"
-							onClick={() => changeSeasion("Winter")}
+							onClick={() => {
+								changeSeasion("Winter");
+							}}
 						>
 							Winter
 						</button>

@@ -26,7 +26,7 @@ const navBar = ({ displaySeason }) => {
 								marginLeft: "1em",
 							}}
 						>
-							Season
+							Saison
 						</span>
 					</p>
 				) : (

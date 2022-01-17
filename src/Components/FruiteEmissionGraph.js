@@ -1,15 +1,17 @@
 //Import d3
 import React from "react";
 import "./FruiteEmissionGraph.sass";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import * as d3 from "d3";
 import { schemeGnBu } from "d3";
+import { userContext } from "../context/userContext";
 
 const FruiteEmissionGraph = ({
 	//array of month numbers [1,2,3,4,5,6,7,8,9,10,11,12]
 	passed,
 }) => {
 	const ref = useRef();
+	const { selection } = useContext(userContext);
 
 	const [componentHeight, setComponentHeight] = useState(0);
 	const [componentWidth, setComponentWidth] = useState(0);

@@ -4,14 +4,17 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { UserContext } from "./context/userContext";
+import RefContext from "./context/refContext";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <UserContext>
-      <App />
-    </UserContext>
-  </React.StrictMode>,
-  document.getElementById("root")
+	<React.StrictMode>
+		<UserContext>
+			<RefContext>
+				<App />
+			</RefContext>
+		</UserContext>
+	</React.StrictMode>,
+	document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

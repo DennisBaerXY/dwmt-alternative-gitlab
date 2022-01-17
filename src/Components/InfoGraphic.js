@@ -3,11 +3,10 @@ import "./InfoGraphic.sass";
 import { userContext } from "../context/userContext";
 import CarGif from "../gifs/auto_5.gif";
 const InfoGraphic = ({ name }) => {
-	const { selection, getEmissionPerKGMonth, month} = useContext(userContext);
+	const { selection, getEmissionPerKGMonth, month } = useContext(userContext);
 	const trackRef = useRef();
 	const carRef = useRef();
 	const greenTrackRef = useRef();
-
 
 	const trackStyle = {
 		backgroundColor: "#363636",
@@ -15,8 +14,6 @@ const InfoGraphic = ({ name }) => {
 		height: "2rem",
 		color: "white",
 	};
-
-
 
 	//Moves the Car with an animation
 	function moveCar() {
@@ -40,8 +37,8 @@ const InfoGraphic = ({ name }) => {
 
 		const carAnimation = car.animate(
 			[
-				{ transform: `translateX(0)` },
-				{ transform: `translateX(${distance}px)` },
+				{ transform: `translateX(0) scale(1.5)` },
+				{ transform: `translateX(${distance}px) scale(1.5)` },
 			],
 			{
 				duration: 100 * duration,
@@ -77,7 +74,7 @@ const InfoGraphic = ({ name }) => {
 	function resetCar() {
 		const car = carRef.current;
 		car.animate(
-			[{ transform: "translateX(0px)" }, { transform: "translateX(0px)" }],
+			[{ transform: "translateX(0px)" }, { transform: "translateX(0px) " }],
 			{
 				duration: 0,
 				fill: "forwards",
@@ -88,63 +85,50 @@ const InfoGraphic = ({ name }) => {
 	}
 
 	return (
-		//<div className="infoGraphic">
-		<div>
-			<img src="images/InfografikErdbeere.jpg"
-			alt="" 
-			//srcset="" 
-			//ref={selection.infografic} 
-			className="InfoGraphic"
-			/>
-			{/* <div className="infographic-container">
-				<div className="infoGraphic__title">
-					<h1>{name}</h1>
-				</div>
-				<div className="infoGraphic__content">
-					<div className="infoGraphic__content__text">
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-							euismod, nisi vel consectetur interdum, nisl nunc aliquet nunc,
-							eget egestas nisl nunc euismod nunc. Pellentesque habitant morbi
-							tristique senectus et netus et malesuada fames ac turpis egestas.
-						</p>
-					</div>
+		<div className="infoGraphic">
+			<div
+				className="infographic-container"
+				style={{
+					backgroundImage: `url(./images/${selection.infoGraphic})`,
+				}}
+			>
+				<div className="carContainer">
+					{
+						// 1 mile = 1.60934 km
+						// 1kg co2 are 3.5km
+					}
+
 					<img
-						src="images/erdbeere.jpg"
-						//src="https://via.placeholder.com/300"
-						alt="Strawberry"
-						className="infoGraphic__content__image"
+						src={CarGif}
+						alt=""
+						ref={carRef}
+						className="car"
+						onClick={() => {
+							moveCar();
+						}}
 					/>
-				</div>
-			</div> */}
 
-			<div className="carContainer">
-				{
-					// 1 mile = 1.60934 km
-					// 1kg co2 are 3.5km
-				}
-				
-				<p>Klicke auf das Auto, um dir die Emmison in kg anzeigen zu lassen, die der Transport von  {selection.name} im ... {selection.name.month} verursachen würde.</p>
+					{
+						//add dashed line to the track
+					}
 
+					<div className="track" ref={trackRef} style={trackStyle}>
+						<div className="greenTrack" ref={greenTrackRef}>
+							<div className="greenTrack__line"></div>
+						</div>
+					</div>
 
-				<img className= "hover" src={CarGif} alt="" srcset="" ref={carRef} onClick={() => moveCar()} />
-				{
-					//add dashed line to the track
-				}
-				<div className="track" ref={trackRef} style={trackStyle}>
-					<div className="greenTrack" ref={greenTrackRef}>
-						<div className="greenTrack__line"></div>
+					<div className="InfoText">
+						Das Auto kann{" "}
+						{(getEmissionPerKGMonth(selection, month) * 3.5).toFixed(1)}km
+						Fahren mit den Emission pro kg von {selection.name}
+					</div>
+
+					<div className="graphicButtons">
+						<button onClick={() => moveCar()}>Play </button>
+						<button onClick={() => resetCar()}>Reset </button>
 					</div>
 				</div>
-				<span className = "buttonsContainer">
-					<button onClick={() => resetCar()}>Reset </button>
-				</span>
-
-				<p className="InfoText">
-					Das Auto kann{" "}
-					{(getEmissionPerKGMonth(selection, month) * 3.5).toFixed(1)}km Fahren
-					mit den Emission pro kg von {selection.name} fahren.
-				</p>
 			</div>
 		</div>
 	);

@@ -23,25 +23,32 @@ const InfoGraphic = ({ name }) => {
 		const car = carRef.current;
 		const emission = getEmissionPerKGMonth(selection, month);
 
-		let distance = emission * (track.offsetWidth / 100);
+		//Max distance is the max emission per month + max emission per month / 2
+		let maxEmissionMonths = selection.carbonEmissionPerMonthPerKG;
 
-		//Car shoudnt move more than the track width
-		if (distance > track.offsetWidth) {
-			distance = track.offsetWidth;
-		}
+		//Finds the Max emission per month
+		let maxEmission = Math.max(...Object.values(maxEmissionMonths));
 
-		const duration = distance / 10;
+		//Calculates the distance the car has to move
+		//maxEmission shoud be capped by the offset of the track
 
-		console.log(`distance: ${distance}`);
-		console.log(`duration: ${duration}`);
+		//Calculates the distance the car has to move
+		//emission shoud be capped by the offset of the track
+
+		let carDistance = (emission / maxEmission) * track.offsetWidth;
+
+		const duration = carDistance / 2;
+
+		// console.log(`distance: ${distance}`);
+		// console.log(`duration: ${duration}`);
 
 		const carAnimation = car.animate(
 			[
 				{ transform: `translateX(0) ` },
-				{ transform: `translateX(${distance}px) ` },
+				{ transform: `translateX(${carDistance}px)` },
 			],
 			{
-				duration: 100 * duration,
+				duration: duration * 10,
 				easing: "ease-in-out",
 				fill: "forwards",
 			}
@@ -52,7 +59,7 @@ const InfoGraphic = ({ name }) => {
 			car.style.transform = `translateX(${track.offsetWidth}px)`;
 		};
 
-		distance += car.offsetWidth / 2;
+		let distance = car.offsetWidth / 2 + carDistance;
 
 		greenTrack.style.width = `${distance}px`;
 
@@ -86,50 +93,50 @@ const InfoGraphic = ({ name }) => {
 
 	return (
 		<div className="infoGraphic">
-			<div
-				className="infographic-container"
-				style={{
-					backgroundImage: `url(./images/${selection.infoGraphic})`,
-				}}
-			>
-				<div className="carContainer">
-					{
-						// 1 mile = 1.60934 km
-						// 1kg co2 are 3.5km
-					}
+			<img
+				src={`./images/${selection.infoGraphic}`}
+				alt="baum"
+				className="infoImage"
+			/>
 
-					<img
-						src={CarGif}
-						alt=""
-						ref={carRef}
-						className="car"
-						onClick={() => {
-							moveCar();
-						}}
-					/>
+			<div className="carContainer">
+				{
+					// 1 mile = 1.60934 km
+					// 1kg co2 are 3.5km
+				}
 
-					{
-						//add dashed line to the track
-					}
+				<img
+					src={CarGif}
+					alt=""
+					ref={carRef}
+					className="car"
+					onClick={() => {
+						moveCar();
+					}}
+				/>
 
-					<div className="track" ref={trackRef} style={trackStyle}>
-						<div className="greenTrack" ref={greenTrackRef}>
-							<div className="greenTrack__line"></div>
-						</div>
-					</div>
+				{
+					//add dashed line to the track
+				}
 
-					<div className="InfoText">
-						Das Auto kann{" "}
-						{(getEmissionPerKGMonth(selection, month) * 3.5).toFixed(1)}km
-						Fahren mit den Emission pro kg von {selection.name}
-					</div>
-
-					<div className="graphicButtons">
-						<button onClick={() => moveCar()}>Play </button>
-						<button onClick={() => resetCar()}>Reset </button>
+				<div className="track" ref={trackRef} style={trackStyle}>
+					<div className="greenTrack" ref={greenTrackRef}>
+						<div className="greenTrack__line"></div>
 					</div>
 				</div>
+
+				<div className="InfoText">
+					Das Auto kann{" "}
+					{(getEmissionPerKGMonth(selection, month) * 3.5).toFixed(1)}km Fahren
+					mit den Emission pro kg von {selection.name}
+				</div>
+
+				<div className="graphicButtons">
+					<button onClick={() => moveCar()}>Play </button>
+					<button onClick={() => resetCar()}>Reset </button>
+				</div>
 			</div>
+			{/* end carContainer */}
 		</div>
 	);
 };

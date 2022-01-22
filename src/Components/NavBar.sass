@@ -3,6 +3,7 @@
 .TopBar
     position: fixed
     width: 100%
+    max-width: 100vw
     background-color: $primary-color
     height: 50px
     display: flex
@@ -14,11 +15,21 @@
     padding-top: 5px
     margin-left: 3rem
 
+    @media screen and (max-width: 768px)
+        position: relative
+        margin-left: 0
+        padding-top: 0
+
+        margin: 0 auto
 .TopBar_Nav
     position: relative
     display: flex
     margin: 0 auto
     align-items: center
+
+    @media screen and (max-width: 768px)
+        display: none
+
 .NormalDisplayText
     font-size: 1.5rem
     font-family: $body-font-family
@@ -28,6 +39,11 @@
     transition: all 0.3s ease-in-out
     &:hover
         color: $secondary-color
+
+    @media screen and (max-width: 768px)
+        font-size: 1.2rem
+        margin-right: 1rem
+        display: none
 
 .TopBar_Nav_ul_seasons
     display: flex

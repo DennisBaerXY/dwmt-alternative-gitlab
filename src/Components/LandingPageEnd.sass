@@ -3,14 +3,21 @@
 
 .landingPageEnd
     width: 100%
+    max-width: 100vw
     height: 75vh
     padding: 80px
+
+    @media screen and (max-width: 768px)
+        padding: 1rem
 
 .landingPageEnd__content
     width: 100%
     height: 100%
     display: flex
     flex-direction: row
+
+    @media screen and (max-width: 768px)
+        flex-direction: column
 
 .landingPageEnd_imageContainer
     width: 50%
@@ -19,6 +26,10 @@
     flex-direction: column
     justify-content: center
     align-items: center
+
+    @media screen and (max-width: 768px)
+        width: 100%
+        height: 400px
 
 .landingPageEnd_imageContainer__image
     display: block
@@ -29,6 +40,10 @@
     background-size: cover
     background-position: center top
 
+    @media screen and (max-width: 768px)
+        height: 100%
+        width: 100%
+
 .landingPageEnd__content__text
     width: 50%
     height: 100%
@@ -37,11 +52,20 @@
     justify-content: center
 
     padding-left: 5rem
+
+    @media screen and (max-width: 768px)
+        padding-left: 0
+        width: 100%
+        text-align: justify
+
 .landingPageEnd__content__text__title
     font-size: 1.6rem
     font-family: $h1-font-family
     color: #000
     width: 50%
+
+    @media screen and (max-width: 768px)
+        width: 100%
 
 .landingPageEnd__content__text__paragraph
     font-size: $body-font-size

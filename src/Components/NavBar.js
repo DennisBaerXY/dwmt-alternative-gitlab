@@ -11,36 +11,22 @@ const navBar = ({ displaySeason }) => {
 			<div className="TopBar_Nav">
 				{displaySeason ? (
 					<p className="NormalDisplayText">
-						<span
-							style={{
-								fontSize: "1.3em",
-								marginLeft: "1em",
-							}}
-						>
-							{displaySeason}
-						</span>
-
-						<span
-							style={{
-								fontSize: "1.3em",
-								marginLeft: "1em",
-							}}
-						>
-							Saison
-						</span>
+						<span>{`${displaySeason}   Saison`}</span>
 					</p>
 				) : (
 					<>
-						<p className="NormalDisplayText">Choose a season:</p>
-						<ul className="TopBar_Nav_ul_seasons">
+						<p className="NormalDisplayText">Wähle eine Saison</p>
+						{/* <ul className="TopBar_Nav_ul_seasons">
 							<li>Frühling</li>
 							<li>Sommer</li>
 							<li>Herbst</li>
 							<li>Winter</li>
-						</ul>
+						</ul> */}
 					</>
 				)}
 			</div>
+
+			<button className="backToLandingPage">Startseite</button>
 		</div>
 	);
 };

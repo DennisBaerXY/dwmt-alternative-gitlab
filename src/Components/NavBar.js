@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import "./NavBar.sass";
 import React from "react";
 import Logo from "./Logo.js";
@@ -10,9 +11,12 @@ const navBar = ({ displaySeason }) => {
 			</div>
 			<div className="TopBar_Nav">
 				{displaySeason ? (
-					<p className="NormalDisplayText">
-						<span>{`${displaySeason}   Saison`}</span>
-					</p>
+					// eslint-disable-next-line jsx-a11y/anchor-is-valid
+					<a href="#">
+						<p className="NormalDisplayText">
+							<span>{`${displaySeason}   Saison`}</span>
+						</p>
+					</a>
 				) : (
 					<>
 						<p className="NormalDisplayText">Wähle eine Saison</p>
@@ -26,7 +30,9 @@ const navBar = ({ displaySeason }) => {
 				)}
 			</div>
 
-			<button className="backToLandingPage">Startseite</button>
+			<a href="#">
+				<button className="backToLandingPage">Startseite</button>
+			</a>
 		</div>
 	);
 };

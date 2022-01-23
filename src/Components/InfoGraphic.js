@@ -3,7 +3,8 @@ import "./InfoGraphic.sass";
 import { userContext } from "../context/userContext";
 import CarGif from "../gifs/car.gif";
 const InfoGraphic = ({ name }) => {
-	const { selection, getEmissionPerKGMonth, month } = useContext(userContext);
+	const { selection, getEmissionPerKGMonth, month, getMonthDisplayName } =
+		useContext(userContext);
 	const trackRef = useRef();
 	const carRef = useRef();
 	const greenTrackRef = useRef();
@@ -90,7 +91,7 @@ const InfoGraphic = ({ name }) => {
 		<div className="infoGraphic">
 			<img
 				src={`./images/${selection.infoGraphic}`}
-				alt="baum"
+				alt={`Saiso_InfoGraphic_${selection.name}`}
 				className="infoImage"
 			/>
 
@@ -123,8 +124,8 @@ const InfoGraphic = ({ name }) => {
 				<div className="InfoText">
 					Das Auto kann{" "}
 					{(getEmissionPerKGMonth(selection, month) * 3.5).toFixed(1)}km Fahren
-					im {month}
-					mit den Emission pro kg von {selection.name} in diesem Monat.
+					im {getMonthDisplayName(month)} mit den Emission pro kg von{" "}
+					{selection.name}.
 				</div>
 
 				<div className="graphicButtons">

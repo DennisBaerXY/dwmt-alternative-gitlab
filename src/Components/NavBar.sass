@@ -9,6 +9,10 @@
     align-items: center
 
     z-index: 3
+
+    @media screen and (max-width: 700px)
+        position: relative
+
 .TopBar_Logo
     position: absolute
     padding-top: 5px
@@ -20,6 +24,10 @@
     margin: 0 auto
     align-items: center
     justify-content: center
+
+    a
+        text-decoration: none
+
 .NormalDisplayText
     font-size: 1.8rem
     font-family: $body-font-family
@@ -28,6 +36,9 @@
     transition: all 0.3s ease-in-out
     &:hover
         color: $secondary-color
+
+    @media screen and (max-width: 700px)
+        display: none
 
 .TopBar_Nav_ul_seasons
     display: flex
@@ -55,8 +66,13 @@
     transition: all 0.3s ease-in-out
     font-size: 1.5rem
     background-color: $secondary-color
-    border-radius: 0.5rem
+    //Bottom 0 border-radius
+    border-radius: 0.4rem 0.4rem 0 0
     font-family: $button-font-family
     color: white
     outline: none
     border: none
+
+    &:hover
+        background-color: white
+        color: $secondary-color

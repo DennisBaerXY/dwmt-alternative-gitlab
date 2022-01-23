@@ -29,12 +29,7 @@ const InfoGraphic = ({ name }) => {
 		//Finds the Max emission per month
 		let maxEmission = Math.max(...Object.values(maxEmissionMonths));
 
-		//Calculates the distance the car has to move
-		//maxEmission shoud be capped by the offset of the track
-
-		//Calculates the distance the car has to move
-		//emission shoud be capped by the offset of the track
-
+		//Max distance is the track.offsetWidth  * scale from 0 to 1 (0 is the start and 1 is the end)
 		let carDistance = (emission / maxEmission) * track.offsetWidth;
 
 		const duration = carDistance / 2;
@@ -128,7 +123,8 @@ const InfoGraphic = ({ name }) => {
 				<div className="InfoText">
 					Das Auto kann{" "}
 					{(getEmissionPerKGMonth(selection, month) * 3.5).toFixed(1)}km Fahren
-					mit den Emission pro kg von {selection.name}
+					im {month}
+					mit den Emission pro kg von {selection.name} in diesem Monat.
 				</div>
 
 				<div className="graphicButtons">

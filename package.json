@@ -36,5 +36,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.reutlingen-university.de/baer/dmwt-gruppe-1-zwacka-gerlach-baer.git",
+    "directory": "client"
+  },
+  "license": ""
+
 }

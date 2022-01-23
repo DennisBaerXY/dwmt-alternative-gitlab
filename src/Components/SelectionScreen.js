@@ -13,7 +13,7 @@ const SelectionScreen = () => {
 				<div className="flexContainerRow">
 					<h1 className="selectionScreenHeader">Iss mit der Jahreszeit</h1>
 					<div className="monthSelectionBox">
-						<h1>Monatsauwahl</h1>
+						<h1>Monatsauswahl</h1>
 						<div>
 							{monthsInSeasion.map((month, index) => (
 								<ChangeMonthToButton key={index} month={month} />

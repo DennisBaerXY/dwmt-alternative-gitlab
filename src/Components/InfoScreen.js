@@ -63,7 +63,7 @@ const InfoScreen = () => {
 							/>
 						) : (
 							<div>
-								<p>Bitte wähle einen Fruite aus um eine Graphik zu sehen.</p>
+								<p>Bitte wähle ein Gemüse oder Obst aus um eine Grafik zu sehen.</p>
 							</div>
 						)}
 					</div>

@@ -123,9 +123,9 @@ const InfoGraphic = ({ name }) => {
 
 				<div className="InfoText">
 					Das Auto kann{" "}
-					{(getEmissionPerKGMonth(selection, month) * 3.5).toFixed(1)}km Fahren
+					{(getEmissionPerKGMonth(selection, month) * 3.5).toFixed(1)}km
 					im {getMonthDisplayName(month)} mit den Emission pro kg von{" "}
-					{selection.name}.
+					{selection.name} fahren.
 				</div>
 
 				<div className="graphicButtons">

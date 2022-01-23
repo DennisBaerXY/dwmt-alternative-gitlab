@@ -54,7 +54,7 @@ const SelectionBox = ({ header, bodyText, inSeason }) => {
 						);
 					}) //.map
 				) : (
-					<div>No Fruites</div>
+					<div>Kein Obst oder Gemüse für diese Jahreszeit vorhanden</div>
 				)}
 			</div>
 
